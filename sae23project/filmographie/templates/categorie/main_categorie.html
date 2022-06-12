@@ -11,6 +11,10 @@ categorie
         <h2><a href="/categorie/formulaire_categorie">Ajouter une catégorie</a></h2>
     <div class="bloc-info">
         {% for l in categories %}
+             <li> la categorie du film est film: '{{l.nom}}' </li>
+             <li class="descrip"> Despcription de la categorie :{{l.descriptif}} </li>
+
+
         {{l}}<div class="separ-button"><button><a href="/affiche-categorie/{{l.id}}/">AFFICHE</a></button><button><a href="/update-categorie/{{l.id}}/">UPDATE</a></button><button><a href="/delete-categorie/{{l.id}}/">DELETE</a></button></div>
         {% endfor %}
     </div>

@@ -7,9 +7,9 @@ class categorie(models.Model):
 
 
 
-    def __str__(self):
-        chaine = f" {self.nom} | {self.descriptif}"
-        return chaine
+    #def __str__(self):
+        #chaine = f" {self.nom} | {self.descriptif}"
+       # return chaine
 
     def dictionnaire(self):
         return {"nom": self.nom, "description": self.descriptif, }
@@ -72,7 +72,7 @@ class commentaire(models.Model):
     film = models.ForeignKey(film, on_delete=models.CASCADE, default=None, null=True)
     personnes = models.CharField(max_length=100)
     note = models.CharField(max_length=100)
-    commentaire = models.CharField(max_length=100)
+    commentaire = models.CharField(max_length=300)
     date = models.DateField()
 
     def __str__(self):
