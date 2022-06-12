@@ -4,7 +4,7 @@ Categorie
 {% endblock %}
 {% block content %}
     <div>
-        {% for a in liste2 %}
+        {% for a in liste %}
 <article class="info_film">
 
 
@@ -12,7 +12,7 @@ Categorie
         <li>-Le titre  '{{a.titre}} ' . </li><br>
         <li>-la date de sortie est le  {{a.annee_de_sortie}} . </li><br>
         <li>-affiche du film'{{a.affiche}}' exemplaire. </li><br>
-        <li>-Et elle a une porté  de {{a.realisateur}}. </li><br>
+        <li>-le ralisateur est {{a.realisateur}}. </li><br>
         <li>-L'arme a pour nom la ' {{a.categorie}} '.  </li> <br>
    </article>
 
@@ -20,4 +20,6 @@ Categorie
                 <button name="upd"><a href="/update2/{{a.id}}"> update </a></button></li>
         <button><a href="/categorie/main_categorie">RETOUR</a></button>
     </div>
+
+{% endfor %}
 {% endblock %}

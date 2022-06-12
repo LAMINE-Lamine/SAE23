@@ -41,8 +41,8 @@ def main_categorie(request):
 
 def affiche_categorie(request, id):
 	categorie = models.categorie.objects.get(pk=id)
-	liste2 = list(models.film.objects.filter(categorie_id=id))
-	return render(request,'categorie/affiche_categorie.html',{"categorie": categorie})
+	liste=list(models.film.objects.filter(categorie=categorie))
+	return render(request,'categorie/affiche_categorie.html',{"categorie": categorie,"liste":liste})
 
 
 def update_categorie(request, id):
