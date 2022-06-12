@@ -5,6 +5,8 @@ class categorie(models.Model):
     nom = models.CharField(max_length=100)
     descriptif = models.TextField(null=True, blank=True)
 
+
+
     def __str__(self):
         chaine = f" {self.nom} | {self.descriptif}"
         return chaine

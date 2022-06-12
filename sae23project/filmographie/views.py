@@ -112,8 +112,8 @@ def main_film(request):
 def affiche_film(request, id):
 	film = models.film.objects.get(pk=id)
 	liste3 = list(models.commentaire.objects.filter(film_id=id))
-	liste4 = list(models.acteur.objects.filter(film_id=id))
-	return render(request,'film/affiche_film.html',{"film": film})
+	liste=list(models.acteur.objects.filter(film=film))
+	return render(request,'film/affiche_film.html',{"film": film ,"liste":liste,"liste3":liste3})
 
 
 def update_film(request, id):
