@@ -44,9 +44,9 @@ class personne(models.Model):
     mot_de_passe = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
 
-    def __str__(self):
-        chaine = f"{self.pseudo} | {self.mail} | {self.nom_prenom} | {self.type} | {self.mot_de_passe}"
-        return chaine
+    #def __str__(self):
+       # chaine = f"{self.pseudo} | {self.mail} | {self.nom_prenom} | {self.type} | {self.mot_de_passe}"
+        #return chaine
 
     def dictionnaire(self):
         return {"pseudo": self.pseudo, "nom_prenom": self.nom_prenom, "mail": self.mail,"mot_de_passe": self.mot_de_passe, "type": self.type}
@@ -59,9 +59,9 @@ class acteur(models.Model):
     age = models.IntegerField(blank=False)
     photos = models.FileField(upload_to='', storage=None, null=True, blank=True, default="APLU")
 
-    def __str__(self):
-        chaine = f"{self.nom} | {self.prenom} | {self.age}"
-        return chaine
+    #def __str__(self):
+        #chaine = f"{self.nom} | {self.prenom} | {self.age}"
+        #return chaine
 
     def dictionnaire(self):
         return {"nom": self.nom, "prenom": self.prenom, "âge": self.age, "photos": self.photos,"film": self.film}
@@ -75,9 +75,9 @@ class commentaire(models.Model):
     commentaire = models.CharField(max_length=300)
     date = models.DateField()
 
-    def __str__(self):
-        chaine = f"{self.film} | {self.personnes} | {self.date} | {self.note} | {self.commentaire}"
-        return chaine
+    #def __str__(self):
+       # chaine = f"{self.film} | {self.personnes} | {self.date} | {self.note} | {self.commentaire}"
+       # return chaine
 
     def dictionnaire(self):
         return {"film": self.film, "personnes": self.personnes, "date": self.date, "note": self.note,"commentaire": self.commentaire}
