@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+     <nav class="oriantationpage">
+         <div class="navbarre">Filmographie</div>
+         <ul class="onglet" id="list">
+            <li class="list"><a href="/">home</a></li>
+            <li class="list"> <a href="/categorie/main_categorie">Categorie</a></li>
+            <li class="list"><a href="/film/main_film">film1</a></li>
+             <li class="list"><a href="/acteur/main_acteur">acteur</a></li>
+             <li class="list"><a href="/commentaire/main_commentaire">commentaire</a></li>
+             <li class="list"><a href="/personne/main_personne">personne</a></li>
+
+            </ul>
+
+         <div class="home" id="classe_darme" ></div>
+          </nav>
+
+
+      {% block content %}
+
+      {% endblock %}
+
+</body>
+</html>

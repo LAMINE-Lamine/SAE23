@@ -1,0 +1,16 @@
+{% extends "home.html" %}
+{% block title %}
+
+{% endblock %}
+{% block content %}
+    Formulaire acteur
+    {% if id_cat == none %}
+        <form method="post" action="/acteur/formulaire_acteur">
+    {% else %}
+        <form method="post" action="/updatetraitement-acteur/{{id_acteur}}/">
+    {% endif %}
+        {% csrf_token %}
+    {{ form_acteur.as_ul }}
+    <input class="submit-input" type="submit" value="SEND"/>
+            <button><a href="/acteur/main_acteur">RETOUR</a></button>
+{% endblock %}

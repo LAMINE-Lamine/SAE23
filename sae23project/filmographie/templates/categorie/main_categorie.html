@@ -1,0 +1,17 @@
+
+
+{% extends "home.html" %}
+{% block title %}
+categorie
+{% endblock %}
+{% block content %}
+
+
+        <h1>Voici la liste des Catégories crées :</h1>
+        <h2><a href="/categorie/formulaire_categorie">Ajouter une catégorie</a></h2>
+    <div class="bloc-info">
+        {% for l in categories %}
+        {{l}}<div class="separ-button"><button><a href="/affiche-categorie/{{l.id}}/">AFFICHE</a></button><button><a href="/update-categorie/{{l.id}}/">UPDATE</a></button><button><a href="/delete-categorie/{{l.id}}/">DELETE</a></button></div>
+        {% endfor %}
+    </div>
+{% endblock %}

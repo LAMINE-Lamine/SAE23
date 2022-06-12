@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+{% block title %}
+personne
+{% endblock %}
+{% block content %}
+    <div>
+
+        le titre : {{personne.pseudo}}<br>
+	    annee_de_sortie : {{personne.nom_prenom}}<br>
+        affiche : {{personne.mail}}<br>
+        realisateur : {{ personne.mot_de_passe}}<br>
+        categorie : {{ personne.type}}<br>
+        <button><a href="/film/main_film">RETOUR</a></button>
+    </div>
+{% endblock %}

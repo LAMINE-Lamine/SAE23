@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+{% block title %}
+Categorie
+{% endblock %}
+{% block content %}
+    <div>
+        Nom de la catégorie du film: {{ commentaire.film}}<br>
+	    personnes : {{ commentaire.personnes}}<br>
+        note: {{ commentaire.note}}<br>
+        commentaire : {{ commentaire.commentaire}}<br>
+        date : {{ commentaire.date}}<br>
+
+        <button><a href="/commentaire/main_commentaire">RETOUR</a></button>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+
+{% extends "home.html" %}
+{% block title %}
+
+{% endblock %}
+{% block content %}
+    Formulaire Film
+    {% if id_cat == none %}
+        <form method="post" action="/commentaire/formulaire_commentaire">
+    {% else %}
+        <form method="post" action="/updatetraitement-commentaire/{{id_commentaire}}/">
+    {% endif %}
+        {% csrf_token %}
+    {{ form_commentaire.as_ul }}
+    <input class="submit-input" type="submit" value="SEND"/>
+            <button><a href="/main-commentaire">RETOUR</a></button>
+{% endblock %}

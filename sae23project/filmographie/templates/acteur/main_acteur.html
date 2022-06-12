@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+{% block title %}
+
+{% endblock %}
+{% block content %}
+
+
+        <h1>Voici la liste des acteur  :</h1>
+        <h2><a href="/acteur/formulaire_acteur">Ajouter un acteur</a></h2>
+    <div class="bloc-info">
+        {% for l in acteurs %}
+        {{l}}<div class="separ-button"><button><a href="/affiche-acteur/{{l.id}}/">AFFICHE</a></button><button><a href="/update-acteur/{{l.id}}/">UPDATE</a></button><button><a href="/delete-acteur/{{l.id}}/">DELETE</a></button></div>
+        {% endfor %}
+    </div>
+{% endblock %}

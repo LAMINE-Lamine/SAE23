@@ -1,0 +1,37 @@
+{% extends "home.html" %}
+{% block title %}
+Film
+{% endblock %}
+{% block content %}
+    <div>
+         {% for a in liste3 %}
+<article class="info_film">
+
+        <li>-Le nom du film est ' {{a.acteur}} '.  </li> <br>
+        <li>-Le nom du film est ' {{a.film}} '.  </li> <br>
+        <li>-la personne est  '{{a.personnes}} ' . </li><br>
+        <li>-la note du film est  {{a.note}} . </li><br>
+        <li>-commentaire'{{a.commentaire}}' exemplaire. </li><br>
+        <li>-commentaire date de: {{a.date}}. </li><br>
+
+     <li>  <button name="supp"><a href="/delete2/{{a.id}}"> effacer  </a></button>
+                <button name="upd"><a href="/update2/{{a.id}}"> update </a></button></li>
+
+   </article>
+ {% for a in liste4 %}
+<article class="info_film">
+
+
+        <li>-Le nom du film ' {{a.nom}} '.  </li> <br>
+        <li>-Le titre  '{{a.nom}} ' . </li><br>
+        <li>-la date de sortie est le  {{a.prenom}} . </li><br>
+        <li>-affiche du film'{{a.age}}' . </li><br>
+        <li>-Et elle a une porté  de {{a.photos}}. </li><br>
+   </article>
+
+            <li>  <button name="supp"><a href="/delete2/{{a.id}}"> effacer  </a></button>
+                <button name="upd"><a href="/update2/{{a.id}}"> update </a></button></li>
+
+        <button><a href="/film/main_film">RETOUR</a></button>
+    </div>
+{% endblock %}

@@ -1,0 +1,77 @@
+*{
+font-family:arial;
+font-size:25px;
+}
+body{
+
+    background-image: url(04045_800x480.jpg);
+    background-size:cover;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+    }
+
+html{
+
+    scroll-behavior: smooth;
+    margin:0;
+}
+
+
+
+nav{
+
+    position: sticky;
+    top: 0;
+
+}
+
+a{
+
+    text-decoration: none;}
+
+.oriantationpage>button{
+
+    margin-left:12%;
+    margin-top:5px
+}
+
+.oriantationpage>button>a{
+
+    font-size:55px;
+
+}
+
+.oriantationpage{
+
+    background-color:#D39E3B ;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+
+}
+
+.onglet{
+
+}
+.list{
+
+    list-style-type:none;
+}
+
+.onglet .list{
+
+    display:inline-block;
+    padding:35px 25px;
+}
+
+.oriantationpage a{
+
+    color:white;
+    transition:0.3s;
+
+}
+.oriantationpage a:hover{
+   color:red;
+}

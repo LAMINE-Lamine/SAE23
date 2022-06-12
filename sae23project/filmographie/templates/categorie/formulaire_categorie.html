@@ -1,0 +1,17 @@
+
+{% extends "home.html" %}
+{% block title %}
+
+{% endblock %}
+{% block content %}
+    Formulaire Catégorie
+    {% if id_cat == none %}
+        <form method="post" action="/categorie/formulaire_categorie">
+    {% else %}
+        <form method="post" action="/updatetraitement-categorie/{{id_categorie}}/">
+    {% endif %}
+        {% csrf_token %}
+    {{ form_categorie.as_ul }}
+    <input class="submit-input" type="submit" value="SEND"/>
+            <button><a href="/main-categorie">RETOUR</a></button>
+{% endblock %}
