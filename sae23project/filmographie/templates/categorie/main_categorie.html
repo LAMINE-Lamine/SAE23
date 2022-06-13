@@ -5,21 +5,6 @@
 
 {% endblock %}
 {% block content %}
-{% for l in categories %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -29,6 +14,9 @@
 
         <article class="nom">Voici la liste des Catégories crées :
         <h2><a href="/categorie/formulaire_categorie">Ajouter une catégorie</a></h2>
+
+            {% for l in categories %}
+
     <div class="bloc-info">
 
              <li> la categorie du film est film: '{{l.nom}}' {{categories.nom}} </li>

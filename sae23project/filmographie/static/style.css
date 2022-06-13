@@ -4,7 +4,7 @@ font-size:25px;
 }
 body{
 
-    background-image: url(04045_800x480.jpg);
+    background-color:#888888;
     background-size:cover;
     width: 100%;
     padding: 0%;
@@ -44,7 +44,7 @@ a{
 
 .oriantationpage{
 
-    background-color:#D39E3B ;
+    background-color:#202020 ;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -163,5 +163,14 @@ a{
     width:40vw;
     border-radius:5px;
     padding-bottom: 50px;
+
+}
+
+.FILM{
+ display:grid;
+ margin:20px;
+ grid-template-columns:auto auto auto;
+ background-color:#2196F3;
+ padding:20px;
 
 }

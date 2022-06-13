@@ -6,9 +6,10 @@ commentaire
 {% endblock %}
 {% block content %}
 
- {% for l in commentaires %}
+
         <article class="nomB">Voici la liste des commentaires:
         <h2><a href="/commentaire/formulaire_commentaire">Ajouter un commentaire</a></h2>
+            {% for l in commentaires %}
     <div class="bloc-info">
 
 
