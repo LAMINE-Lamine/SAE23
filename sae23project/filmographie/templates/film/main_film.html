@@ -4,14 +4,14 @@
 {% endblock %}
 {% block content %}
 <div class="FILM">
+{% for l in films %}
 
-
-
+  <div class="FILMA">
         <article class="nomC">Voici la liste des films crées :
 
             <h2><a href="/film/formulaire_film">Ajouter un film</a></h2>
-{% for l in films %}
-    <div class="FILMA">
+
+
 
 
              <li> la categorie du film est film: '{{l.nom}}  {{categorie.nom}}' </li>
@@ -19,10 +19,12 @@
 
 
         <div class="separ-button"><button><a href="/affiche-film/{{l.id}}/">AFFICHE</a></button><button><a href="/update-film/{{l.id}}/">UPDATE</a></button><button><a href="/delete-film/{{l.id}}/">DELETE</a></button></div>
-    </div>
+  </div>
 
             </article>
-</div>
+
 
  {% endfor %}
+</div>
 {% endblock %}
+
