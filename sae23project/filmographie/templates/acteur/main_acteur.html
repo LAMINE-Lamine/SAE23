@@ -3,21 +3,23 @@
 
 {% endblock %}
 {% block content %}
+{% for l in acteurs %}
+        <h2 class="ajout"><a href="/acteur/formulaire_acteur">Ajouter un acteur</a></h2>
+        <article class="nomD">Voici la liste des acteur  :
 
-
-        <h1 class="nomD">Voici la liste des acteur  :</h1>
-        <h2><a href="/acteur/formulaire_acteur">Ajouter un acteur</a></h2>
     <div class="bloc-info">
-        {% for l in acteurs %}
 
-             <li> l'acteur aparait dans le zzzzzzzzzzzzzzzzzzzzfilm: '{{l.film}}' </li>
+
+             <li> l'acteur aparait dans le film: '{{l.film}}' </li>
              <li> le nom de l'acteur est: '{{l.nom}}' </li>
              <li> Son prenom est: '{{l.prenom}}' </li>
              <li> l'acteur est agé de : {{l.age}} ans </li>
              <li> l'acteur aparait dans le film: '{{l.photos}}'</li>
 
 
-        {{l}}<div class="separ-button"><button><a href="/affiche-acteur/{{l.id}}/">Afficher</a></button><button><a href="/update-acteur/{{l.id}}/">Modifier</a></button><button><a href="/delete-acteur/{{l.id}}/">Supp</a></button></div>
+        }<div class="separ-button"><button><a href="/affiche-acteur/{{l.id}}/">Afficher</a></button><button><a href="/update-acteur/{{l.id}}/">Modifier</a></button><button><a href="/delete-acteur/{{l.id}}/">Supp</a></button></div>
+        </div>
+        </article>
         {% endfor %}
-    </div>
+
 {% endblock %}

@@ -150,3 +150,18 @@ a{
     padding-bottom: 50px;
 
 }
+
+.ajout{
+    padding-top:9px;
+    background-color:#C8A54D;
+    display:flex;
+    margin-left:30%;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+    margin-top:75px;
+    width:40vw;
+    border-radius:5px;
+    padding-bottom: 50px;
+
+}

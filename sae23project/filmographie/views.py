@@ -135,7 +135,7 @@ def updatetraitement_film(request, id):
 def delete_film(request, id):
 	film = models.film.objects.get(pk=id)
 	film.delete()
-	return HttpResponseRedirect("/film/main-film/")
+	return HttpResponseRedirect("/film/main_film")
 
 
 
@@ -197,7 +197,7 @@ def updatetraitement_acteur(request, id):
 def delete_acteur(request, id):
 	acteur = models.acteur.objects.get(pk=id)
 	acteur.delete()
-	return HttpResponseRedirect("/acteur/main-acteur/")
+	return HttpResponseRedirect("/acteur/main_acteur")
 
 #......................................................................................................................................................................
 

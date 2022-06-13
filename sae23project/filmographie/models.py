@@ -30,7 +30,7 @@ class film(models.Model):
             str = str + i.nom + " , "
 
 
-        chaine = f"{self.nom} | {self.titre} | {self.annee_de_sortie} | {self.realisateur} | {str}"
+        chaine = f"{self.nom} "
         return chaine
 
     def dictionnaire(self):

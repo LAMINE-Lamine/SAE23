@@ -2,21 +2,42 @@
 
 {% extends "home.html" %}
 {% block title %}
-categorie
+
 {% endblock %}
 {% block content %}
+{% for l in categories %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <article class="nom">Voici la liste des Catégories crées :
         <h2><a href="/categorie/formulaire_categorie">Ajouter une catégorie</a></h2>
     <div class="bloc-info">
-        {% for l in categories %}
-             <li> la categorie du film est film: '{{l.nom}}' </li>
+
+             <li> la categorie du film est film: '{{l.nom}}' {{categories.nom}} </li>
              <li class="descrip"> Despcription de la categorie :{{l.descriptif}} </li>
 
-        </article>
 
-        {{l}}<div class="separ-button"><button><a href="/affiche-categorie/{{l.id}}/">AFFICHE</a></button><button><a href="/update-categorie/{{l.id}}/">UPDATE</a></button><button><a href="/delete-categorie/{{l.id}}/">DELETE</a></button></div>
+        <div class="separ-button"><button><a href="/affiche-categorie/{{l.id}}/">AFFICHE</a></button><button><a href="/update-categorie/{{l.id}}/">UPDATE</a></button><button><a href="/delete-categorie/{{l.id}}/">DELETE</a></button></div>
+        </div>
+          </article>
         {% endfor %}
-    </div>
+
 {% endblock %}

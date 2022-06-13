@@ -6,16 +6,21 @@ commentaire
 {% endblock %}
 {% block content %}
 
-
-        <h1 class="nomB">Voici la liste des commentaires:</h1>
+ {% for l in commentaires %}
+        <article class="nomB">Voici la liste des commentaires:
         <h2><a href="/commentaire/formulaire_commentaire">Ajouter un commentaire</a></h2>
     <div class="bloc-info">
-        {% for l in commentaires %}
 
-             <li> la categorie du film est film: '{{l.nom}}' </li>
-             <li class="descrip"> Despcription de la categorie :{{l.descriptif}} </li>
 
-        {{l}}<div class="separ-button"><button><a href="/affiche-commentaire/{{l.id}}/">AFFICHE</a></button><button><a href="/update-commentaire/{{l.id}}/">UPDATE</a></button><button><a href="/delete-commentaire/{{l.id}}/">DELETE</a></button></div>
+             <li> film: '{{l.film}}' </li>
+             <li>  nom de la personnes du commentaire:{{l.personnes}} </li>
+            <li> note sur 10: '{{l.note}}' </li>
+             <li> Despcription du commentaire:{{l.commentaire}} </li>
+            <li> Date du commentaire:{{l.date}} </li>
+
+     <div class="separ-button"><button><a href="/affiche-commentaire/{{l.id}}/">AFFICHE</a></button><button><a href="/update-commentaire/{{l.id}}/">UPDATE</a></button><button><a href="/delete-commentaire/{{l.id}}/">DELETE</a></button></div>
+            </div>
+        </article>
         {% endfor %}
-    </div>
+
 {% endblock %}
