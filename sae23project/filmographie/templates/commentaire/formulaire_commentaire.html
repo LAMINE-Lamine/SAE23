@@ -4,8 +4,8 @@
 
 {% endblock %}
 {% block content %}
-    Formulaire Film
-    {% if id_cat == none %}
+    Formulaire commentaire
+    {% if id_commentaire == None %}
         <form method="post" action="/commentaire/formulaire_commentaire">
     {% else %}
         <form method="post" action="/updatetraitement-commentaire/{{id_commentaire}}/">

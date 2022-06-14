@@ -68,6 +68,7 @@ class acteur(models.Model):
 
 class commentaire(models.Model):
 
+
     film = models.ForeignKey(film, on_delete=models.CASCADE, default=None, null=True)
     personnes = models.CharField(max_length=100)
     note = models.CharField(max_length=100)

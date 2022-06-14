@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
     Formulaire Catégorie
-    {% if id_cat == none %}
+    {% if id_categorie == None %}
         <form method="post" action="/categorie/formulaire_categorie">
     {% else %}
         <form method="post" action="/updatetraitement-categorie/{{id_categorie}}/">

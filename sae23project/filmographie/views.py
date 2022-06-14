@@ -48,8 +48,6 @@ def affiche_categorie(request, id):
 def update_categorie(request, id):
 	categorie = models.categorie.objects.get(pk=id)
 	form = Categorie(categorie.dictionnaire())
-
-
 	return render(request,'categorie/formulaire_categorie.html',{"form_categorie": form, "id_categorie":id})
 
 
@@ -59,7 +57,7 @@ def updatetraitement_categorie(request, id):
 		categorie = form.save(commit=False)
 		categorie.id = id
 		categorie.save()
-		return HttpResponseRedirect(f"/main-catégorie/")
+		return HttpResponseRedirect("/categorie/main_categorie")
 	else:
 		return render(request,"categorie/formulaire_categorie.html",{"form_categorie": form, "id_categorie":id})
 
@@ -115,6 +113,7 @@ def affiche_film(request, id):
 	film = models.film.objects.get(pk=id)
 	liste3 = list(models.commentaire.objects.filter(film_id=id))
 	liste=list(models.acteur.objects.filter(film=film))
+
 	return render(request,'film/affiche_film.html',{"film": film ,"liste":liste,"liste3":liste3})
 
 
@@ -302,16 +301,16 @@ def update_commentaire(request, id):
 
 
 def updatetraitement_commentaire(request, id):
-	form = Acteur(request.POST)
+	form = Commentaire(request.POST)
 	if form.is_valid():
 		commentaire = form.save(commit=False)
 		commentaire.id = id
 		commentaire.save()
-		return HttpResponseRedirect(f"/main-commentaire/")
+		return HttpResponseRedirect("/commentaire/main_commentaire")
 	else:
 		return render(request,"commentaire/formulaire_commentaire.html",{"form_commentaire": form, "id_commentaire":id})
 
 def delete_commentaire(request, id):
 	commentaire = models.commentaire.objects.get(pk=id)
 	commentaire.delete()
-	return HttpResponseRedirect("/commentaire/main-commentaire/")
+	return HttpResponseRedirect("/commentaire/main_commentaire")
