@@ -17,10 +17,9 @@ class Categorie(ModelForm):
 class Film(ModelForm):
     class Meta:
         model = models.film
-        fields = ('nom', 'titre', 'annee_de_sortie', 'affiche', 'realisateur', 'categorie')
+        fields = ('nom', 'annee_de_sortie', 'affiche', 'realisateur', 'categorie')
         labels = {
             'nom': _("Nom"),
-            'titre': _("Titre"),
             'annee_de_sortie': _('Annee_de_sortie'),
             'affiche': _('Affiche'),
             'realisateur': _('Realisateur'),

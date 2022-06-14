@@ -14,8 +14,12 @@
 
 
 
-             <li> la categorie du film est film: '{{l.nom}}  {{categorie.nom}}' </li>
-             <li class="descrip"> Despcription de la categorie :{{l.descriptif}} </li>
+             <li> la categorie du film: '{{l.nom}}  {{categorie.nom}}' </li>
+            <li> le nom du film: '{{l.nom}}' </li>
+            <li> la categorie du film est film: {{l.annee_de_sortie}}  </li>
+            <li> la categorie du film est film: {{l.affiche}}</li>
+            <li> la categorie du film est film: '{{l.realisateur}}  </li>
+
 
 
         <div class="separ-button"><button><a href="/affiche-film/{{l.id}}/">AFFICHE</a></button><button><a href="/update-film/{{l.id}}/">UPDATE</a></button><button><a href="/delete-film/{{l.id}}/">DELETE</a></button></div>

@@ -18,7 +18,6 @@ class categorie(models.Model):
 class film(models.Model):
     categorie = models.ManyToManyField(categorie)
     nom=models.CharField(max_length=100)
-    titre = models.CharField(max_length=100)
     annee_de_sortie = models.DateField()
     affiche = models.ImageField(upload_to='', storage=None, null=True, blank=True, default="APLU")
     realisateur = models.CharField(max_length=100)
@@ -34,7 +33,7 @@ class film(models.Model):
         return chaine
 
     def dictionnaire(self):
-        return {"nom": self.nom ,"titre": self.titre, "annee_de_sortie": self.annee_de_sortie, "affiche": self.affiche,"realisateur": self.realisateur, "categorie": self.categorie}
+        return {"nom": self.nom , "annee_de_sortie": self.annee_de_sortie, "affiche": self.affiche,"realisateur": self.realisateur, "categorie": self.categorie}
 
 
 class personne(models.Model):

@@ -48,6 +48,8 @@ def affiche_categorie(request, id):
 def update_categorie(request, id):
 	categorie = models.categorie.objects.get(pk=id)
 	form = Categorie(categorie.dictionnaire())
+
+
 	return render(request,'categorie/formulaire_categorie.html',{"form_categorie": form, "id_categorie":id})
 
 
