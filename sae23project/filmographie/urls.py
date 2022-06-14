@@ -6,6 +6,7 @@ urlpatterns = [
 
     path('categorie/formulaire_categorie', views.formulaire_categorie),
     path('categorie/main_categorie', views.main_categorie),
+    path('afficheb_acteur/<int:id>/', views.afficheb_acteur),
     path('affiche-categorie/<int:id>/', views.affiche_categorie),
     path('delete-categorie/<int:id>/', views.delete_categorie),
     path('update-categorie/<int:id>/', views.update_categorie),

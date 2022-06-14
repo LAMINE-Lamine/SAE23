@@ -4,7 +4,7 @@
 {% endblock %}
 {% block content %}
     Formulaire acteur
-    {% if id_categorie == None %}
+    {% if id_acteur == None %}
         <form method="post" action="/acteur/formulaire_acteur">
     {% else %}
         <form method="post" action="/updatetraitement-acteur/{{id_acteur}}/">

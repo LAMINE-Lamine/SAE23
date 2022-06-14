@@ -4,7 +4,7 @@
 {% endblock %}
 {% block content %}
     Formulaire film
-    {% if id_cat == none %}
+    {% if id_film == None %}
         <form method="post" action="/film/formulaire_film">
     {% else %}
         <form method="post" action="/updatetraitement-film/{{id_film}}/">

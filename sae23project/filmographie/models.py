@@ -19,7 +19,7 @@ class film(models.Model):
     categorie = models.ManyToManyField(categorie)
     nom=models.CharField(max_length=100)
     annee_de_sortie = models.DateField()
-    affiche = models.ImageField(upload_to='', storage=None, null=True, blank=True, default="APLU")
+    affiche =models.ImageField(upload_to="images",blank=True, null = True)
     realisateur = models.CharField(max_length=100)
 
 

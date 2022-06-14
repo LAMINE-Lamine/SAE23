@@ -71,6 +71,10 @@ def delete_categorie(request, id):
 	return HttpResponseRedirect("/categorie/main_categorie")
 
 
+def afficheb_acteur(request, id):
+	film = models.film.objects.get(pk=id)
+	liste=list(models.acteur.objects.filter(film=film))
+	return render(request,'film/affiche_film.html',{"film": film,"liste":liste})
 
 
 #.....................................................................................................................................................
@@ -114,7 +118,11 @@ def affiche_film(request, id):
 	liste3 = list(models.commentaire.objects.filter(film_id=id))
 	liste=list(models.acteur.objects.filter(film=film))
 
+
+
 	return render(request,'film/affiche_film.html',{"film": film ,"liste":liste,"liste3":liste3})
+
+
 
 
 def update_film(request, id):
@@ -129,7 +137,7 @@ def updatetraitement_film(request, id):
 		film = form.save(commit=False)
 		film.id = id
 		film.save()
-		return HttpResponseRedirect(f"/main-film/")
+		return HttpResponseRedirect("/film/main_film")
 	else:
 		return render(request,"film/formulaire_film.html",{"form_film": form, "id_film":id})
 
@@ -176,7 +184,7 @@ def main_acteur(request):
 
 def affiche_acteur(request, id):
 	acteur = models.acteur.objects.get(pk=id)
-	return render(request,'acteur/affiche_acteur.html',{"acteur": acteur})
+	return render(request,'acteur/afficheb_acteur.html',{"acteur": acteur})
 
 
 def update_acteur(request, id):
@@ -191,7 +199,7 @@ def updatetraitement_acteur(request, id):
 		acteur = form.save(commit=False)
 		acteur.id = id
 		acteur.save()
-		return HttpResponseRedirect(f"/main-acteur/")
+		return HttpResponseRedirect("/acteur/main_acteur")
 	else:
 		return render(request,"acteur/formulaire_acteur.html",{"form_acteur": form, "id_acteur":id})
 
@@ -314,3 +322,5 @@ def delete_commentaire(request, id):
 	commentaire = models.commentaire.objects.get(pk=id)
 	commentaire.delete()
 	return HttpResponseRedirect("/commentaire/main_commentaire")
+
+

@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+{% block title %}
+ACTEUR information :
+{% endblock %}
+{% block content %}
+    <div>
+        {% for a in acteurs %}
+<article class="info_acteur">
+
+
+        <li>-Nom acteur {{a.nom}} . </li><br>
+        <li>-prenom :{{a.prenom}}. </li><br>
+        <li>-age {{a.age}}. </li><br>
+        <li>-photos' {{a.acteur.photos}} '.  </li> <br>
+   </article>
+
+            <li>  <button name="supp"><a href="/affiche/main_affiche"> effacer  </a></button>
+                <button name="upd"><a href="/update2/{{a.id}}"> update </a></button></li>
+        <button><a href="/categorie/main_categorie">RETOUR</a></button>
+    </div>
+
+{% endfor %}
+{% endblock %}
