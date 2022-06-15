@@ -3,31 +3,37 @@
 FILM
 {% endblock %}
 {% block content %}
-<h1>le film</h1>
-    <div>
+<h1>les films de la categorie:</h1>
+
         {% for a in liste %}
 <article class="info_film">
 
 
-        <li>-Le nom du film ' {{a.nom}} '.  </li> <br>
-        <li>-la date de sortie est le  {{a.annee_de_sortie}} . </li><br>
-        <li>-affiche du film :{{a.affiche}}. </li><br>
-        <li>-le realisateur est {{a.realisateur}}. </li><br>
-        <li>-La categorie du film est' {{a.categorie.nom}} '.  </li> <br>
-
+        <li>-Le nom du film   ' {{a.nom}} '.  </li>
+        <li>-la date de sortie : {{a.annee_de_sortie}} . </li>
+         <li> <img src="{{a.affiche}}" height=90px > </li>
+        <li>-le realisateur : {{a.realisateur}}. </li>
+        <li>-La categorie du film : {{a.categorie.nom}} '. </li>
 
 
             <li> <button name="supp"><a href="/afficheb_acteur/{{a.id}}/"> affiche  </a></button>
-                <button name="supp"><a href="/categorie/main_categorie"> effacer  </a></button>
-                <button name="upd"><a href="/update2/{{a.id}}"> update </a></button></li>
+                <button name="supp"><a href="/delete-film/{{a.id}}/"> effacer  </a></button>
+                <button name="upd"><a href="/update-film/{{a.id}}/"> update </a></button></li>
         <button><a href="/categorie/main_categorie">RETOUR</a></button>
     </article>
-         </div>
+
 {% endfor %}
-        <h1>Voici ici la liste des commentaires dans le film</h1>
+
+<h1>Voici ici la liste des commentaires dans le film</h1>
+
+<br>
+<br>
+<br>
+
+<h2>Ici nous pouvons voir les differents commentaires pour le film en question ci-dessous:</h2>
 
         {% for l in liste %}
-<article class="info_commentaire">
+<article class="info_film">
 
 
              <li> Nom du film : '{{l.film}}' </li>
@@ -37,9 +43,9 @@ FILM
              <li> l'acteur aparait dans le film: '{{l.photos}}'</li>
 
 
-            <li>  <button name="supp"><a href="/afficheb/main_afficheb"> effacer  </a></button>
-                <button name="upd"><a href="/update2/{{a.id}}"> update </a></button></li>
-        <button><a href="/categorie/main_categorie">RETOUR</a></button>
+            <li>  <button name="supp"><a href="/delete-commentaire/{{l.id}}/"> effacer  </a></button>
+                <button name="upd"><a href="/update-commentaire/{{l.id}}/"> update </a></button></li>
+        <button><a href="/commentaire/main_commentaire">RETOUR</a></button>
     </article>
 
 

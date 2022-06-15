@@ -7,9 +7,9 @@
 
         <h2 class="ajout"><a href="/acteur/formulaire_acteur">Ajouter un acteur</a></h2>
 {% for l in acteurs %}
-        <article class="nomD">Voici la liste des acteur  :
+        <article class="info_film">Voici la liste des acteur  :
 
-    <div class="bloc-info">
+
 
 
              <li> l'acteur aparait dans le film: '{{l.film}}' </li>
@@ -20,7 +20,7 @@
 
 
         <div class="separ-button"><button><a href="/update-acteur/{{l.id}}/">Modifier</a></button><button><a href="/delete-acteur/{{l.id}}/">Supp</a></button></div>
-        </div>
+
         </article>
         {% endfor %}
 

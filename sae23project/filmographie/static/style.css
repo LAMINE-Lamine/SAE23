@@ -214,3 +214,19 @@ padding:1%;}
     margin: auto;
     list-style: none;
 }
+
+.formulaire_acteur{
+
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 75px;
+    width: 65vw;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px #558549;
+    font-size:80 %;
+    margin: auto;
+    list-style: none;
+}
