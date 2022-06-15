@@ -9,10 +9,10 @@
     {% else %}
         <form method="post" action="/updatetraitement-film/{{id_film}}/">
     {% endif %}
-        {% csrf_token %}
-    {{ form_film.as_ul }}
+{% csrf_token %}
+    {{ form_film.as_p }}
     <input class="submit-input" type="submit" value="SEND"/>
-            <button><a href="/main-film">RETOUR</a></button>
+            <button><a href="/film/main_film">Retour</a></button>
 
 
 {% endblock %}

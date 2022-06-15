@@ -74,7 +74,9 @@ def delete_categorie(request, id):
 def afficheb_acteur(request, id):
 	film = models.film.objects.get(pk=id)
 	liste=list(models.acteur.objects.filter(film=film))
-	return render(request,'film/affiche_film.html',{"film": film,"liste":liste})
+	return render(request,'categorie/afficheb_acteur.html',{"film": film,"liste":liste})
+
+
 
 
 #.....................................................................................................................................................

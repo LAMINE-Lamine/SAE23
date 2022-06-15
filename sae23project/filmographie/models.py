@@ -16,10 +16,10 @@ class categorie(models.Model):
 
 
 class film(models.Model):
-    categorie = models.ManyToManyField(categorie)
+    categorie = models.ManyToManyField('categorie',null = True,blank=True,default=True)
     nom=models.CharField(max_length=100)
     annee_de_sortie = models.DateField()
-    affiche =models.ImageField(upload_to="images",blank=True, null = True)
+    affiche = models.URLField(null=True)
     realisateur = models.CharField(max_length=100)
 
 
@@ -52,7 +52,7 @@ class personne(models.Model):
 
 
 class acteur(models.Model):
-    film = models.ManyToManyField(film)
+    film = models.ManyToManyField('film', default=True, null=True)
     nom = models.CharField(max_length=100)
     prenom = models.CharField(max_length=100)
     age = models.IntegerField(blank=False)

@@ -3,21 +3,27 @@
 ACTEUR information :
 {% endblock %}
 {% block content %}
-    <div>
-        {% for a in acteurs %}
+
+<h1>Voici ici la liste des acteurs dans le film</h1>
+
+
+         {{film.age}}
+        {% for l in liste %}
 <article class="info_acteur">
 
 
-        <li>-Nom acteur {{a.nom}} . </li><br>
-        <li>-prenom :{{a.prenom}}. </li><br>
-        <li>-age {{a.age}}. </li><br>
-        <li>-photos' {{a.acteur.photos}} '.  </li> <br>
-   </article>
+             <li> l'acteur aparait dans le film: '{{l.film}}' </li>
+             <li> le nom de l'acteur est: '{{l.nom}}' </li>
+             <li> Son prenom est: '{{l.prenom}}' </li>
+             <li> l'acteur est agé de : {{l.age}} ans </li>
+             <li> l'acteur aparait dans le film: '{{l.photos}}'</li>
 
+             <li> <button name="supp"><a href="/affichec_acteur/{{l.id}}/"> affiche  </a></button>
             <li>  <button name="supp"><a href="/affiche/main_affiche"> effacer  </a></button>
                 <button name="upd"><a href="/update2/{{a.id}}"> update </a></button></li>
         <button><a href="/categorie/main_categorie">RETOUR</a></button>
-    </div>
+    </article>
+
 
 {% endfor %}
 {% endblock %}

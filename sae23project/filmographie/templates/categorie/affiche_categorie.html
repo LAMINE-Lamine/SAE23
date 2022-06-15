@@ -15,13 +15,37 @@ FILM
         <li>-le realisateur est {{a.realisateur}}. </li><br>
         <li>-La categorie du film est' {{a.categorie.nom}} '.  </li> <br>
 
-   </article>
+
 
             <li> <button name="supp"><a href="/afficheb_acteur/{{a.id}}/"> affiche  </a></button>
                 <button name="supp"><a href="/categorie/main_categorie"> effacer  </a></button>
                 <button name="upd"><a href="/update2/{{a.id}}"> update </a></button></li>
         <button><a href="/categorie/main_categorie">RETOUR</a></button>
-    </div>
+    </article>
+         </div>
+{% endfor %}
+        <h1>Voici ici la liste des commentaires dans le film</h1>
+
+        {% for l in liste %}
+<article class="info_commentaire">
+
+
+             <li> Nom du film : '{{l.film}}' </li>
+             <li> Commentaire : '{{l.commentaire}}' </li>
+             <li> Note : '{{l.note}}'/5 </li>
+             <li> date : {{l.date}} ans </li>
+             <li> l'acteur aparait dans le film: '{{l.photos}}'</li>
+
+
+            <li>  <button name="supp"><a href="/afficheb/main_afficheb"> effacer  </a></button>
+                <button name="upd"><a href="/update2/{{a.id}}"> update </a></button></li>
+        <button><a href="/categorie/main_categorie">RETOUR</a></button>
+    </article>
+
+
+
+
+
 
 {% endfor %}
 {% endblock %}
