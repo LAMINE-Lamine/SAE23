@@ -56,7 +56,7 @@ class acteur(models.Model):
     nom = models.CharField(max_length=100)
     prenom = models.CharField(max_length=100)
     age = models.IntegerField(blank=False)
-    photos = models.FileField(upload_to='', storage=None, null=True, blank=True, default="APLU")
+    photos = models.URLField(null=True)
 
     #def __str__(self):
         #chaine = f"{self.nom} | {self.prenom} | {self.age}"
@@ -71,7 +71,7 @@ class commentaire(models.Model):
 
     film = models.ForeignKey(film, on_delete=models.CASCADE, default=None, null=True)
     personnes = models.CharField(max_length=100)
-    note = models.CharField(max_length=100)
+    note = models.FloatField(max_length=100)
     commentaire = models.CharField(max_length=300)
     date = models.DateField()
 

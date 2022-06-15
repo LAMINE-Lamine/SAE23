@@ -120,9 +120,15 @@ def affiche_film(request, id):
 	liste3 = list(models.commentaire.objects.filter(film_id=id))
 	liste=list(models.acteur.objects.filter(film=film))
 
+	somme = 0
+	for commentaire in liste3:
+		somme = somme + commentaire.note
+	somme = somme / len(liste3)
+	print(somme)
 
 
-	return render(request,'film/affiche_film.html',{"film": film ,"liste":liste,"liste3":liste3})
+
+	return render(request,'film/affiche_film.html',{"film": film ,"liste":liste,"liste3":liste3,"somme":somme})
 
 
 
@@ -295,13 +301,17 @@ def traitement_commentaire(request):
 		commentaire=Commentaire
 		return render(request,"commentaire/formulaire_commentaire.html",{"commentaire": commentaire})
 
+
 def main_commentaire(request):
 	liste = list(models.commentaire.objects.all())
 	return render(request,"commentaire/main_commentaire.html",{"commentaires": liste})
 
 def affiche_commentaire(request, id):
 	commentaire = models.commentaire.objects.get(pk=id)
+
 	return render(request,'commentaire/affiche_commentaire.html',{"commentaire": commentaire})
+
+
 
 
 def update_commentaire(request, id):
