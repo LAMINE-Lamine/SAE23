@@ -128,9 +128,14 @@ def affiche_film(request, id):
 		somme = somme / len(liste3)
 		print(somme)
 
+	liste_note = [commentaire.note]
+
+	max_value = max(liste_note)
+	print('Maximum value', max_value)
 
 
-	return render(request,'film/affiche_film.html',{"film": film ,"liste":liste,"liste3":liste3,"somme":somme})
+
+	return render(request,'film/affiche_film.html',{"film": film ,"liste":liste,"liste3":liste3,"somme":somme,'Maximum value':max_value})
 
 
 
