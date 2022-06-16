@@ -14,13 +14,14 @@ commentaire
     <div class="bloc-info">
 
 
-             <li> film: '{{l.film}}' </li>
-             <li>  nom de la personnes du commentaire:{{l.personnes}} </li>
+            <li> film: '{{l.film}}' </li>
+            <li>  nom de la personnes du commentaire:{{l.personnes}} </li>
             <li> note sur 10: '{{l.note}}' </li>
-             <li> Description du commentaire:{{l.commentaire}} </li>
+            <li> Description du commentaire:{{l.commentaire}} </li>
             <li> Date du commentaire:{{l.date}} </li>
-
+            <a href="/filmographie_pdf/{{l.id}}/" class="file" target="blank">Generate PDF File</a>
      <div class="separ-button"><button><a href="/affiche-commentaire/{{l.id}}/">AFFICHE</a></button><button><a href="/update-commentaire/{{l.id}}/">UPDATE</a></button><button><a href="/delete-commentaire/{{l.id}}/">DELETE</a></button></div>
+        <a href="/filmographie_csv/{{l.id}}" class="file" target="blank">Generate CSV File</a> </div>
             </div>
         </article>
         {% endfor %}

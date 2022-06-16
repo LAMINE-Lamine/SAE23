@@ -5,17 +5,17 @@
 {% block content %}
 <div class="FILM">
 
+{% for l in films %}
 
   <div class="FILMA">
         <article class="nomC">Voici la liste des films crées :
 
 
             <h2><a href="/film/formulaire_film">Ajouter un film</a></h2>
-{% for l in films %}
 
 
 
-             <li> La categorie du film: '{{l.nom}}  {{categorie.nom}}' </li>
+            <li> La categorie du film: '{{l.nom}}  {{categorie.nom}}' </li>
             <li> Le nom du film: {{l.nom}} </li>
             <li> La date de sortie du film est: {{l.annee_de_sortie}}  </li>
             <li> <img src="{{l.affiche}}" height=90px > </li>

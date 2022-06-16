@@ -4,6 +4,12 @@ from . import views
 urlpatterns = [
     path('', views.main),
 
+
+
+    path('filmographie_csv/<int:id>/', views.filmographie_csv, name='filmographie_csv'),
+    path('filmographie_pdf/<int:id>/', views.filmographie_pdf),
+
+
     path('categorie/formulaire_categorie', views.formulaire_categorie),
     path('categorie/main_categorie', views.main_categorie),
     path('afficheb_acteur/<int:id>/', views.afficheb_acteur),
@@ -44,4 +50,8 @@ urlpatterns = [
     path('delete-personne/<int:id>/', views.delete_personne),
     path('update-personne/<int:id>/', views.update_personne),
     path('updatetraitement-personne/<int:id>/', views.updatetraitement_personne),
+
+
+
+
 ]

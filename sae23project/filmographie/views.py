@@ -1,11 +1,21 @@
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+
 from .forms import Categorie
 from .forms import Film
 from .forms import Personne
 from .forms import Commentaire
 from .forms import Acteur
 from . import models
+from fpdf import FPDF
+from django.shortcuts import render
+from django.http import FileResponse
+import csv
+
+
+
+
+
+
 
 def main(request):
 	return render(request,"home.html")
@@ -120,22 +130,29 @@ def affiche_film(request, id):
 	liste3 = list(models.commentaire.objects.filter(film_id=id))
 	liste=list(models.acteur.objects.filter(film=film))
 
-
+	liste_note=[]
 	somme = 0
+	max_value= 0
+	min_value = 0
 	if len(liste3) != 0:
 		for commentaire in liste3:
 			somme = somme + commentaire.note
+			liste_note.append(commentaire.note)
+			print('Maximum_value',max_value)
+			max_value = max(liste_note)
+			print('Minimum_value', min_value)
+			min_value = min(liste_note)
 		somme = somme / len(liste3)
 		print(somme)
-
-	liste_note = [commentaire.note]
-
-	max_value = max(liste_note)
-	print('Maximum value', max_value)
+		print(max_value)
+		print(min_value)
 
 
 
-	return render(request,'film/affiche_film.html',{"film": film ,"liste":liste,"liste3":liste3,"somme":somme,'Maximum value':max_value})
+
+
+
+	return render(request,'film/affiche_film.html',{"film": film ,"liste":liste,"liste3":liste3,"somme":somme,'Maximum_value':max_value})
 
 
 
@@ -343,3 +360,35 @@ def delete_commentaire(request, id):
 	return HttpResponseRedirect("/commentaire/main_commentaire")
 
 
+def filmographie_pdf(request ,id):
+	commentaire = models.commentaire.objects.get(pk=id)
+	pdf = FPDF()
+	pdf.add_page()
+	pdf.set_font('Arial', size=16)
+	pdf.cell(200, 10, txt="Voici les éléments des commentaires :", ln=2, align='C')
+	pdf.cell(200, 10, txt="Nom du film " + str(commentaire.film), ln=2, align='C')
+	pdf.cell(200, 10, txt="Le commentaire du film " + str(commentaire.commentaire), ln=2, align='C')
+	pdf.cell(200, 10, txt="La note du film " + str(commentaire.note), ln=2, align='C')
+	pdf.cell(200, 10, txt="La personne qui la publier " + str(commentaire.personnes), ln=2, align='C')
+
+	pdf.cell(200, 10, txt="La date du commentaire " + str(commentaire.date), ln=2, align='C')
+
+	pdf.output('filmographie.pdf')
+	response = FileResponse(open("filmographie.pdf"))
+	return response
+
+
+def filmographie_csv(request,id):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Dispostion'] = 'attachment; filename=filmographie_csv.csv'
+
+    writer = csv.writer(response)
+#CSV
+    commentaire = models.commentaire.objects.all()
+
+    writer.writerow(['Nom film','commentaire film ',' nom de la personne ','note du commentaire','Date commentaire'])
+
+    for commentaire in commentaire:
+        writer.writerow([commentaire.film,'      /       '      ,commentaire.commentaire,'      /       ' ,commentaire.personnes,'      /       ' ,commentaire.note,'      /       ' ,commentaire.date])
+
+    return response
