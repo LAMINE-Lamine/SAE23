@@ -4,14 +4,18 @@ Film
 {% endblock %}
 {% block content %}
     <div>
+       <h1> Moyenne  : {{somme}}</h1>
          {% for a in liste3 %}
+
+
+
 <article class="info_acteur">
 
         <li>-Le nom du film est ' {{a.acteur}} '.  </li> <br>
         <li>-Le nom du film est ' {{a.film}} '.  </li> <br>
         <li>-la personne est  {{a.personnes}} ' . </li><br>
         <li>-la note du film est  {{a.note}} . </li><br>
-        <li>-commentaire'{{a.commentaire}}' exemplaire. </li><br>
+        <li>-commentaire'{{a.commentaire}}' . </li><br>
         <li>-commentaire date de: {{a.date}}. </li><br>
 
      <li>  <button name="supp"><a href="/delete2/{{a.id}}"> effacer  </a></button>
@@ -31,13 +35,7 @@ Film
 
 
 
- <h1>
-    { %for l in liste3% }
-
-Moyenne  : {{somme}}
-
-</h1>
 
 
 
- {%endfor%}
+

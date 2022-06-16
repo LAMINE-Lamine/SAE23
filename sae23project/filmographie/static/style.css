@@ -191,6 +191,7 @@ a{
     font-size:80 %;
         margin: auto;
         list-style: none;
+        margin-bottom:25px;
 }
 
 .info_acteur li {
@@ -230,4 +231,5 @@ padding:1%;}
     font-size:80 %;
     margin: auto;
     list-style: none;
+    margin-bottom: 35px;
 }

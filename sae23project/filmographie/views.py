@@ -120,11 +120,13 @@ def affiche_film(request, id):
 	liste3 = list(models.commentaire.objects.filter(film_id=id))
 	liste=list(models.acteur.objects.filter(film=film))
 
+
 	somme = 0
-	for commentaire in liste3:
-		somme = somme + commentaire.note
-	somme = somme / len(liste3)
-	print(somme)
+	if len(liste3) != 0:
+		for commentaire in liste3:
+			somme = somme + commentaire.note
+		somme = somme / len(liste3)
+		print(somme)
 
 
 
