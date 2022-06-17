@@ -8,8 +8,16 @@
         <h1>Voici la liste des personnes :</h1>
         <h2><a href="/personne/formulaire_personne">Ajouter une personne</a></h2>
     <div class="bloc-info">
-        {% for l in personnes %}
-        {{l}}<div class="separ-button"><button><a href="/affiche-personne/{{l.id}}/">AFFICHE</a></button><button><a href="/update-personne/{{l.id}}/">UPDATE</a></button><button><a href="/delete-personne/{{l.id}}/">DELETE</a></button></div>
-        {% endfor %}
+
+           <li> La nom personne: '{{l.nom}}  {{categorie.nom}}' </li>
+            <li> Le nom du film: {{l.nom}} </li>
+            <li> La date de sortie du film est: {{l.annee_de_sortie}}  </li>
+            <li> <img src="{{l.affiche}}" height=90px > </li>
+            <li> Le realisateur: {{l.realisateur}}  </li>
+
+        <div class="separ-button"><button><a href="/affiche-personne/{{l.id}}/">AFFICHE</a></button><button><a href="/update-personne/{{l.id}}/">UPDATE</a></button><button><a href="/delete-personne/{{l.id}}/">DELETE</a></button></div>
+
     </div>
+
+
 {% endblock %}

@@ -252,10 +252,10 @@ def formulaire_personne(request):
 			return HttpResponseRedirect("/personne/main_personne")
 		else:
 			form = Personne()
-			return render(request,"personne/formulaire_personne.html",{"form_personne": form})
+			return render(request,"personne/formulaire_personne.html",{"form": form})
 	else:
 		form = Personne()
-		return render(request,"personne/formulaire_personne.html",{"form_personne": form})
+		return render(request,"personne/formulaire_personne.html",{"form": form})
 
 
 def traitement_personne(request):
@@ -269,7 +269,7 @@ def traitement_personne(request):
 
 def main_personne(request):
 	liste = list(models.personne.objects.all())
-	return render(request,"personne/main_personne.html",{"personnes": liste})
+	return render(request,"personne/main_personne.html",{"liste": liste})
 
 def affiche_personne(request, id):
 	personne = models.personne.objects.get(pk=id)

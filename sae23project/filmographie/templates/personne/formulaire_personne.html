@@ -3,6 +3,8 @@
 
 {% endblock %}
 {% block content %}
+
+
     Formulaire film
     {% if id_cat == none %}
         <form method="post" action="/film/formulaire_film">
@@ -10,7 +12,7 @@
         <form method="post" action="/updatetraitement-film/{{id_film}}/">
     {% endif %}
         {% csrf_token %}
-    {{ form_film.as_ul }}
+    {{ form.as_ul }}
     <input class="submit-input" type="submit" value="SEND"/>
             <button><a href="/main-film">RETOUR</a></button>
 {% endblock %}
